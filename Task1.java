@@ -14,12 +14,18 @@ public class Task1 {
         Cat cat = new Cat("Barsik", LocalDate.now(), new Owner("Friend"));
         println(cat.getInfo());
 
-        Animal animal = new Animal("Anumal_1", LocalDate.now());
-        println(animal.getInfo());
+        Animal animal = new Animal("Animal_1", LocalDate.now());
+        println(animal);
 
         println(cat.getName());
         cat.setName("Tom");
         println(cat.getName());
-        
+        println(cat);
+        println(cat.getType());
+        println(animal.getType());
+
+        Dog doggy = new Dog("Lada", LocalDate.now(), new Owner("Bill"));
+        println(doggy.getInfo());
+        println(doggy.getType());
     }
 }

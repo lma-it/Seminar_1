@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Cat extends Animal{
+public class Cat extends Animal {
     // package-private доступ по умолчанию, который виден только в той же папке и всех папках, которые внутри, но не снаружи
     
     private Owner owner;

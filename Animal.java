@@ -32,4 +32,13 @@ public class Animal {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s, Birth Date: %s", this.name, this.birthDate);
+    }
+
+    public String getType(){
+        return this.getClass().toString();
+    }
 }
