@@ -4,6 +4,7 @@ import java.util.List;
 import Task2.impl.HotDrink;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class VendingMachine {
     protected List<Product> products = new ArrayList<>();
@@ -22,11 +23,20 @@ public class VendingMachine {
 
     public Product getProduct(String name){
 
-        for (Product product : products) {
-            if(product.getName().equals(name)){
-                Product result = product;
-                products.remove(product);
-                return result;
+        // for (Product product : products) {
+        //     if(product.getName().equals(name)){
+        //         Product result = product;
+        //         products.remove(product);
+        //         return result;
+        //     }
+        // }
+
+        Iterator<Product> iterator = products.iterator();
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getName().equals(name)) {
+                iterator.remove();
+                return product;
             }
         }
         System.out.println("Продукта " + name + " нет в торговом аппарате");
@@ -35,16 +45,17 @@ public class VendingMachine {
 
     public Product getProduct(String name, float volume, float temperature) {
 
-        for (Product product : products) {
-            if(product.getName().equals(name)){
-                if(product.equals(HotDrink.class)){
-                    HotDrink result = (HotDrink) product;
-                    if(result.getVolume() == volume && result.getTemperature() == temperature){
-                        products.remove(product);
-                        return result;
-                    }
-                }
-            }
+        HotDrink result = products.stream()
+            .filter(product -> product.getName().equals(name))
+            .filter(product -> product instanceof HotDrink)
+            .map(product -> (HotDrink) product)
+            .filter(hotDrink -> hotDrink.getVolume() == volume && hotDrink.getTemperature() == temperature)
+            .findFirst()
+            .orElse(null);
+
+        if (result != null) {
+            products.remove(result);
+            return result;
         }
         System.out.println("Напитка " + name + " нет в аппарате.");
         return null;

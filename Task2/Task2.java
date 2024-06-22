@@ -30,11 +30,14 @@ public class Task2 {
         println(bottle2.getInfo());
 
         VendingMachine vendingMachine = new WaterVendingMachine();
-        println(vendingMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция: " + vendingMachine.getProducts());
         vendingMachine.initProducts(List.of(bottle, bottle, bottle, bottle2, bottle2, bottle2, bottle));
         println("В нашем автомате имеются следующая продукция: " + vendingMachine.getProducts());
+        println();
         println("Благодарим за покупку: " + vendingMachine.getProduct("Zam-Zam"));
+        println();
         println("В нашем автомате имеются следующая продукция: " + vendingMachine.getProducts());
+        println();
 
         Product cappuccino = new HotDrink("Cappuccino",
                                         1.4f,
@@ -55,9 +58,13 @@ public class Task2 {
                                         73.0f);
 
         VendingMachine coffeeMachine = new HotDrinkVendingMachine();
-        println(coffeeMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция: " + coffeeMachine.getProducts());
         coffeeMachine.initProducts(List.of(cappuccino, latte, latte, americano, cappuccino, latte));
-        println(coffeeMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция: " + coffeeMachine.getProducts());
+        println();
+        println("Спасибо за покупку " + coffeeMachine.getProduct("Latte", 0.3f, 73.0f));
+        println();
+        println("В нашем автомате имеются следующая продукция: " + coffeeMachine.getProducts());
 
     }
 
