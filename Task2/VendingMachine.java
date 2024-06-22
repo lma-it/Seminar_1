@@ -5,12 +5,20 @@ import java.util.ArrayList;
 public class VendingMachine {
     private List<Product> products = new ArrayList<>();
 
+    public VendingMachine(){
+        this.products = new ArrayList<>();
+    }
+
+    public VendingMachine(List<Product> products){
+        this.products = products;
+    }
+
     public List<Product> getProducts(){
         return this.products;
     }
 
     public Product getProduct(String name){
-        
+
         for (Product product : products) {
             if(product.getName().equals(name)){
                 Product result = product;

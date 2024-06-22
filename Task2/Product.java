@@ -47,13 +47,14 @@ public class Product {
 
     @Override
     public String toString() {
-        return "{" +
-            " name= '" + getName() + "'" +
-            ", price= '" + getPrice() + "'" +
-            ", manufactureDate= '" + getManufactureDate() + "'" +
-            "}";
+        return "Name: '" + getName() + "'" +
+            ", Price: '" + getPrice() + "'" +
+            ", manufactureDate: '" + getManufactureDate();
     }
 
+    public String getInfo(){
+        return String.format("%s, ", super.toString());
+    }
     
 
 }
