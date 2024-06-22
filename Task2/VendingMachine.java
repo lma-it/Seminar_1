@@ -9,13 +9,16 @@ public class VendingMachine {
         return this.products;
     }
 
-    public Product getProduct(Product product){
-        if (this.products.contains(product)){
-            Product result = product;
-            this.products.remove(product);
-            return result;
-        }else{
-            System.out.println("Такого продукта нет в списке");
+    public Product getProduct(String name){
+        
+        for (Product product : products) {
+            if(product.getName().equals(name)){
+                Product result = product;
+                products.remove(product);
+                return result;
+            }else{
+                System.out.println("Продукта " + product.getName() + " нет в торговом аппарате");
+            }
         }
         return null;
     }
