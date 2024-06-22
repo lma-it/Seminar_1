@@ -1,3 +1,4 @@
+package Task1;
 import java.time.LocalDate;
 
 public class Animal {
@@ -17,28 +18,20 @@ public class Animal {
         this.birthDate = birthDate;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
+    public LocalDate getBirthDate() { return birthDate; }
 
     public String getInfo(){
         return String.format("Name: %s, Birth Date: %s", this.name, this.birthDate);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     @Override
     public String toString() {
         return String.format("Name: %s, Birth Date: %s", this.name, this.birthDate);
     }
 
-    public String getType(){
-        return this.getClass().toString();
-    }
+    public String getType(){ return this.getClass().toString(); }
 }

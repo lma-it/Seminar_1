@@ -1,3 +1,4 @@
+package Task1;
 import java.time.LocalDate;
 
 public class Cat extends Animal {
@@ -11,9 +12,7 @@ public class Cat extends Animal {
         this.owner = owner;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
+    public Owner getOwner() { return owner; }
 
     public String getInfo() {
         return String.format("Name of owner: %s, %s ", this.owner.getName(), super.getInfo());
