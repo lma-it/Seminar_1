@@ -23,14 +23,6 @@ public class VendingMachine {
 
     public Product getProduct(String name){
 
-        // for (Product product : products) {
-        //     if(product.getName().equals(name)){
-        //         Product result = product;
-        //         products.remove(product);
-        //         return result;
-        //     }
-        // }
-
         Iterator<Product> iterator = products.iterator();
         while (iterator.hasNext()) {
             Product product = iterator.next();
@@ -57,7 +49,7 @@ public class VendingMachine {
             products.remove(result);
             return result;
         }
-        System.out.println("Напитка " + name + " нет в аппарате.");
+        System.out.println("Напитка " + name + " нет в торговом аппарате.");
         return null;
     }
 
