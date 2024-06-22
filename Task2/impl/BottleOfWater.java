@@ -35,7 +35,12 @@ public class BottleOfWater extends Product{
 
     @Override
     public String getInfo() {
-        return String.format("%s, Volume: %s, Metrial: %s, isSparky: %s", super.toString(), this.getVolume(), this.getMaterial(), this.IsSparky());
+        return String.format("Volume: %s, Material: %s, isSparky: %s", this.getVolume(), this.getMaterial(), this.IsSparky());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s",super.toString(), this.getInfo());
     }
 
 }
