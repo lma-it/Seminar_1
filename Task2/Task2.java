@@ -30,13 +30,13 @@ public class Task2 {
         println(bottle2.getInfo());
 
         VendingMachine vendingMachine = new WaterVendingMachine();
-        println("В нашем автомате имеются следующая продукция: " + vendingMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция напитков: " + vendingMachine.getProducts());
         vendingMachine.initProducts(List.of(bottle, bottle, bottle, bottle2, bottle2, bottle2, bottle));
-        println("В нашем автомате имеются следующая продукция: " + vendingMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция напитков: " + vendingMachine.getProducts());
         println();
-        println("Благодарим за покупку: " + vendingMachine.getProduct("Zam-Zam"));
+        println("Благодарим за покупку напитка: " + vendingMachine.getProduct("Zam-Zam"));
         println();
-        println("В нашем автомате имеются следующая продукция: " + vendingMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция напитков: " + vendingMachine.getProducts());
         println();
 
         Product cappuccino = new HotDrink("Cappuccino",
@@ -58,13 +58,63 @@ public class Task2 {
                                         73.0f);
 
         VendingMachine coffeeMachine = new HotDrinkVendingMachine();
-        println("В нашем автомате имеются следующая продукция: " + coffeeMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция кофе: " + coffeeMachine.getProducts());
         coffeeMachine.initProducts(List.of(cappuccino, latte, latte, americano, cappuccino, latte));
-        println("В нашем автомате имеются следующая продукция: " + coffeeMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция кофе: " + coffeeMachine.getProducts());
         println();
-        println("Спасибо за покупку " + coffeeMachine.getProduct("Latte", 0.3f, 73.0f));
+        println("Спасибо за покупку кофе " + coffeeMachine.getProduct("Latte", 0.3f, 73.0f));
         println();
-        println("В нашем автомате имеются следующая продукция: " + coffeeMachine.getProducts());
+        println("В нашем автомате имеются следующая продукция кофе: " + coffeeMachine.getProducts());
+        println();
+        println("Добавляем чаи и аппарат по приготовлению и продаже чаев.");
+
+        Product greenTea = new HotDrink("Ahmad", 
+                                        60f, 
+                                        LocalDate.now(), 
+                                        0.33f, 
+                                        90.0f);
+
+        Product greenTea2 = new HotDrink("Пуэр", 
+                                        140f, 
+                                        LocalDate.now(), 
+                                        0.33f, 
+                                        90.0f);
+
+        Product greenTea3 = new HotDrink("Тигуань-Инь", 
+                                        120f, 
+                                        LocalDate.now(), 
+                                        0.33f, 
+                                        90.0f);
+
+        Product blackTea = new HotDrink("Lipton", 
+                                        80f, 
+                                        LocalDate.now(), 
+                                        0.33f, 
+                                        90.0f);
+
+        Product blackTea2 = new HotDrink("Dilmah", 
+                                        70f, 
+                                        LocalDate.now(), 
+                                        0.33f, 
+                                        90.0f);
+
+        Product blackTea3 = new HotDrink("GreenField", 
+                                        75f, 
+                                        LocalDate.now(), 
+                                        0.33f, 
+                                        90.0f);
+
+        VendingMachine teaMachine = new HotDrinkVendingMachine();
+
+        teaMachine.initProducts(List.of(greenTea, greenTea2, blackTea, blackTea3, greenTea3, blackTea2));
+        println("В нашем автомате имеются следующая продукция чая: " + teaMachine.getProducts());
+        println();
+        println("Спасибо за покупку чая " + teaMachine.getProduct("Ahmad", 0.33f, 90.0f));
+        println();
+        println("В нашем автомате имеются следующая продукция чая: " + teaMachine.getProducts());
+        println();
+
+
 
     }
 
